@@ -10,5 +10,4 @@ $(document).ready(function(){
 		.fail(function(err){
 			console.log('error!', err);
 		});
-	});
 });
