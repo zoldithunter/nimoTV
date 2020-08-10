@@ -12,13 +12,14 @@ function readRuleFile(filePath) {
     }
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-			var reader = new FileReader();
-			if (reader.readAsBinaryString) {
-				reader.onload = function (e) {
-					ProcessExcel(e.target.result);
-				};
-				reader.readAsBinaryString(this.responseText);
-			}
+		alert(this.responseText);
+// 			var reader = new FileReader();
+// 			if (reader.readAsBinaryString) {
+// 				reader.onload = function (e) {
+// 					ProcessExcel(e.target.result);
+// 				};
+// 				reader.readAsBinaryString(this.responseText);
+// 			}
         }
     };
     xmlhttp.open("GET", filePath, true);
