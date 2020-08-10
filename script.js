@@ -4,10 +4,9 @@ $(document).ready(function(){
     // Loop through elements you want to scrape content from
     		$(html).find("table").find("tbody tr").each( function(){
 
-        var text = $(this).find("td");
-			console.log(text + " - ");
-        // Do something with content
-
+        	var text = $(this).find("td").each(function() {
+        		console.log($(this).text());
+        	})
     } )
 
 } );
