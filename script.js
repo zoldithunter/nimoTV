@@ -12,7 +12,7 @@ function readRuleFile(filePath) {
     }
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-		alert(this.responseText);
+		alert(this.response);
 // 			var reader = new FileReader();
 // 			if (reader.readAsBinaryString) {
 // 				reader.onload = function (e) {
