@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 
 	$("#submit").click(function() {
-		var tmp = data.find(x => x.nimoID === $("#intNimoID"));
+		var tmp = data.find(x => x.nimoID === $("#intNimoID").val());
 		console.log(tmp);
 	})
 
