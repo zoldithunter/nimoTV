@@ -40,7 +40,7 @@ $(document).ready(function(){
                         }
                         return true;
                     });
-            $("#salary").text(rs.sumSalary);
+            $("#salary").text(rs[0].sumSalary);
         }
 	});
 
@@ -62,7 +62,7 @@ $(document).ready(function(){
                         }
                         return true;
                     });
-            $("#salary").text(rs.sumSalary);
+            $("#salary").text(rs[0].sumSalary);
         }
     });
 
