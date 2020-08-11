@@ -22,54 +22,85 @@ $(document).ready(function(){
 	    })
 	});
 
-    $("#info").hide();
-    $("#infoNimo").hide();
+	$("#submitCMT").click(function() {
+        $("#info").hide();
+        $("#infoNimo").hide();
+        if ($("#nimoID").val() == "" && $("#cmt").val() == "") {
+            alert("Không có thông tin");
+        } else {
+            if ($("#nimoID").val() != "" && $("#cmt").val() != "") {
+                var filter = {
+                    nimoID:$("#nimoID").val(),
+                    cmt:$("#cmt").val(),
+                }
+                var rs = data.filter(function(item){
+                            for (var key in filter) {
+                                if (item[key] === undefined || item[key] != filter[key])
+                                    return false;
+                            }
+                            return true;
+                        });
+                if (rs.length == 0) {
+                    alert("Thông tin nimoID: " + $("#nimoID").val() + " và cmt: " + $("#cmt").val() + " sai");
+                } else {
+                    $("#infoNimo").show();
+                    $("#stone").text(tmp.numOfStone);
+                    $("#stoneAGC").text(tmp.numOfAGCUp);
+                    $("#target").text(tmp.targetSalary);
+                    $("#info").show();
+                    $("#hoten").text(tmp.hoten);
+                    $("#stk").text(tmp.stk);
+                    $("#ctk").text(tmp.ctk);
+                    $("#nh").text(tmp.nh);
+                    $("#salary").text(rs[0].sumSalary);
+                }
+            } else if ($("#nimoID").val() != "" && $("#cmt").val() == "") {
+                var tmp = data.find(x => x.nimoID === $("#nimoID").val());
+                if (tmp === undefined) {
+                    alert("Không tồn tại niMoID: " + $("#nimoID").val());
+                } else {
+                    $("#infoNimo").show();
+                    $("#stone").text(tmp.numOfStone);
+                    $("#stoneAGC").text(tmp.numOfAGCUp);
+                    $("#target").text(tmp.targetSalary);
+                }
+            } else if ($("#nimoID").val() == "" && $("#cmt").val() != "") {
+                var tmp = data.find(x => x.cmt === $("#cmt").val());
+                if (tmp === undefined) {
+                    alert("Không tồn tại CMT: " + $("#cmt").val());
+                } else {
+                    $("#info").show();
+                    $("#hoten").text(tmp.hoten);
+                    $("#stk").text(tmp.stk);
+                    $("#ctk").text(tmp.ctk);
+                    $("#nh").text(tmp.nh);
+                }
+            }
+        }
 
-	$("#submitNimoID").click(function() {
+
 		var tmp = data.find(x => x.nimoID === $("#nimoID").val());
-        $("#infoNimo").show();
-        $("#stone").text(tmp.numOfStone);
-        $("#stoneAGC").text(tmp.numOfAGCUp);
-        $("#target").text(tmp.targetSalary);
+        if (tmp === undefined) {
+            $("#infoNimo").hide();
+        } else {
+            
+        }
+
+        var tmp1 = data.find(x => x.cmt === $("#cmt").val());
+        if (tmp1 === undefined) {
+            $("#info").hide();
+        } else {
+            $("#info").show();
+            $("#hoten").text(tmp.hoten);
+            $("#stk").text(tmp.stk);
+            $("#ctk").text(tmp.ctk);
+            $("#nh").text(tmp.nh);
+        }
+
+
 
         if ($("#cmt").val() != "") {
-            var filter = {
-                nimoID:$("#nimoID").val(),
-                cmt:$("#cmt").val(),
-            }
-            var rs = data.filter(function(item){
-                        for (var key in filter) {
-                            if (item[key] === undefined || item[key] != filter[key])
-                                return false;
-                        }
-                        return true;
-                    });
-            $("#salary").text(rs[0].sumSalary);
+            
         }
 	});
-
-    $("#submitCMT").click(function() {
-        var tmp = data.find(x => x.cmt === $("#cmt").val());
-        $("#info").show();
-        $("#hoten").text(tmp.hoten);
-        $("#stk").text(tmp.stk);
-        $("#ctk").text(tmp.ctk);
-        $("#nh").text(tmp.nh);
-
-        if ($("#nimoID").val() != "") {
-            var filter = {
-                nimoID:$("#nimoID").val(),
-                cmt:$("#cmt").val(),
-            }
-            var rs = data.filter(function(item){
-                        for (var key in filter) {
-                            if (item[key] === undefined || item[key] != filter[key])
-                                return false;
-                        }
-                        return true;
-                    });
-            $("#salary").text(rs[0].sumSalary);
-        }
-    });
-
 });
