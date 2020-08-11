@@ -20,11 +20,107 @@
 <body>
 	<div class="container">
 		<div class="row">
+			<div class="col-lg-3">
+				<input type="text" id="hoTen" class="form-control" placeholder="Họ và tên">
+			</div>
 			<div class="col-lg-1">
+				<button class="btn btn-outline-secondary" type="button" id="submitHoTen">Tìm kiếm</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
 				<input type="text" id="intNimoID" class="form-control" placeholder="ID Nimo">
 			</div>
 			<div class="col-lg-1">
-				<button class="btn btn-outline-secondary" type="button" id="submit">Button</button>
+				<button class="btn btn-outline-secondary" type="button" id="submitNimoID">Tìm kiếm</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<input type="text" id="cmt" class="form-control" placeholder="Số CMND">
+			</div>
+			<div class="col-lg-1">
+				<button class="btn btn-outline-secondary" type="button" id="submitCMT">Tìm kiếm</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card">
+					<div class="card-header">
+						Thông tin tài khoản
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-1">
+							<label>Số tài khoản: </label>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="stk"></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-1">
+							<label>Chủ tài khoản: </label>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="ctk"></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-1">
+							<label>Tại ngân hàng: </label>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="nh"></h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card">
+					<div class="card-header">
+						Thông tin trên Nimo
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-1">
+							<label>Số đá tháng 7: </label>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="stone"></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-1">
+							<label>Số đá AGC up: </label>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="stoneAGC"></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-1">
+							<label>Mốc nhận lương: </label>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="target"></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-1">
+							<b>Tổng lương:</b>
+						</div>
+						<div class="col-lg-3">
+							<h4 id="salary"></h4>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
