@@ -1,5 +1,6 @@
 var data = [];
 $(document).ready(function(){
+    jQuery.noConflict();
 	$.get( 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSilSZT8gYAGJa0Z7vTlqdMgm0nv7slXARbp5kMht89t6kC1xxsgfUZmnKvLgWqpRzIyB-Z0K8QuNiC/pubhtml', function( html ) {
 		$(html).find("table").find("tbody tr").each( function(index, item){
 			if (index < 13) {
@@ -23,9 +24,21 @@ $(document).ready(function(){
 	});
 
 
-	$("#submit").click(function() {
-		var tmp = data.find(x => x.nimoID === $("#intNimoID").val());
-		console.log(tmp);
-	})
+	$("#submitNimoID").click(function() {
+		var tmp = data.find(x => x.nimoID === $("#nimoID").val());
+        $("#stone").text(tmp.numOfStone);
+        $("#target").text(tmp.targetSalary);
+
+        if ($("#nimoID").val() != "") {
+
+        }
+	});
+
+    $("#submitCMT").click(function() {
+        var tmp = data.find(x => x.cmt === $("#cmt").val());
+        $("#stk").text(tmp.stk);
+        $("#ctk").text(tmp.ctk);
+        $("#nh").text(tmp.nh);
+    });
 
 });
