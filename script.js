@@ -46,14 +46,14 @@ $(document).ready(function(){
                     alert("Thông tin nimoID: " + $("#nimoID").val() + " và cmt: " + $("#cmt").val() + " sai");
                 } else {
                     $("#infoNimo").show();
-                    $("#stone").text(tmp.numOfStone);
-                    $("#stoneAGC").text(tmp.numOfAGCUp);
-                    $("#target").text(tmp.targetSalary);
+                    $("#stone").text(rs[0].numOfStone);
+                    $("#stoneAGC").text(rs[0].numOfAGCUp);
+                    $("#target").text(rs[0].targetSalary);
                     $("#info").show();
-                    $("#hoten").text(tmp.hoten);
-                    $("#stk").text(tmp.stk);
-                    $("#ctk").text(tmp.ctk);
-                    $("#nh").text(tmp.nh);
+                    $("#hoten").text(rs[0].hoten);
+                    $("#stk").text(rs[0].stk);
+                    $("#ctk").text(rs[0].ctk);
+                    $("#nh").text(rs[0].nh);
                     $("#salary").text(rs[0].sumSalary);
                 }
             } else if ($("#nimoID").val() != "" && $("#cmt").val() == "") {
