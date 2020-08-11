@@ -22,9 +22,12 @@ $(document).ready(function(){
 	    })
 	});
 
+    $("#info").hide();
+    $("#infoNimo").hide();
 
 	$("#submitNimoID").click(function() {
 		var tmp = data.find(x => x.nimoID === $("#nimoID").val());
+        $("#infoNimo").show();
         $("#stone").text(tmp.numOfStone);
         $("#stoneAGC").text(tmp.numOfAGCUp);
         $("#target").text(tmp.targetSalary);
@@ -47,6 +50,7 @@ $(document).ready(function(){
 
     $("#submitCMT").click(function() {
         var tmp = data.find(x => x.cmt === $("#cmt").val());
+        $("#info").show();
         $("#hoten").text(tmp.hoten);
         $("#stk").text(tmp.stk);
         $("#ctk").text(tmp.ctk);
