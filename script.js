@@ -26,6 +26,7 @@ $(document).ready(function(){
 	$("#submitNimoID").click(function() {
 		var tmp = data.find(x => x.nimoID === $("#nimoID").val());
         $("#stone").text(tmp.numOfStone);
+        $("#stoneAGC").text(tmp.numOfAGCUp);
         $("#target").text(tmp.targetSalary);
 
         if ($("#cmt").val() != "") {
