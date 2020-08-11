@@ -47,6 +47,7 @@ $(document).ready(function(){
 
     $("#submitCMT").click(function() {
         var tmp = data.find(x => x.cmt === $("#cmt").val());
+        $("#hoten").text(tmp.hoten);
         $("#stk").text(tmp.stk);
         $("#ctk").text(tmp.ctk);
         $("#nh").text(tmp.nh);

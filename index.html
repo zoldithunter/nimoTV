@@ -10,6 +10,7 @@
 	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	
@@ -25,14 +26,6 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<input type="text" id="hoTen" class="form-control" placeholder="Họ và tên">
-			</div>
-			<div class="col-lg-1">
-				<button class="btn btn-outline-secondary" type="button" id="submitHoTen">Tìm kiếm</button>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-lg-3">
 				<input type="text" id="nimoID" class="form-control" placeholder="ID Nimo">
@@ -58,6 +51,14 @@
 					</div>
 				</div>
 				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-5">
+							<label>Họ và tên: </label>
+						</div>
+						<div class="col-lg-7">
+							<h5 id="hoten"></h5>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-lg-5">
 							<label>Số tài khoản: </label>
