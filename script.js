@@ -28,8 +28,19 @@ $(document).ready(function(){
         $("#stone").text(tmp.numOfStone);
         $("#target").text(tmp.targetSalary);
 
-        if ($("#nimoID").val() != "") {
-
+        if ($("#cmt").val() != "") {
+            var filter = {
+                nimoID:$("#nimoID").val(),
+                cmt:$("#cmt").val(),
+            }
+            var rs = data.filter(function(item){
+                        for (var key in filter) {
+                            if (item[key] === undefined || item[key] != filter[key])
+                                return false;
+                        }
+                        return true;
+                    });
+            $("#salary").text(rs.sumSalary);
         }
 	});
 
@@ -38,6 +49,21 @@ $(document).ready(function(){
         $("#stk").text(tmp.stk);
         $("#ctk").text(tmp.ctk);
         $("#nh").text(tmp.nh);
+
+        if ($("#nimoID").val() != "") {
+            var filter = {
+                nimoID:$("#nimoID").val(),
+                cmt:$("#cmt").val(),
+            }
+            var rs = data.filter(function(item){
+                        for (var key in filter) {
+                            if (item[key] === undefined || item[key] != filter[key])
+                                return false;
+                        }
+                        return true;
+                    });
+            $("#salary").text(rs.sumSalary);
+        }
     });
 
 });
