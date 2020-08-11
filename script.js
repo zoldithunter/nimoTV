@@ -79,30 +79,5 @@ $(document).ready(function(){
                 }
             }
         }
-
-
-		var tmp = data.find(x => x.nimoID === $("#nimoID").val());
-        if (tmp === undefined) {
-            $("#infoNimo").hide();
-        } else {
-            
-        }
-
-        var tmp1 = data.find(x => x.cmt === $("#cmt").val());
-        if (tmp1 === undefined) {
-            $("#info").hide();
-        } else {
-            $("#info").show();
-            $("#hoten").text(tmp.hoten);
-            $("#stk").text(tmp.stk);
-            $("#ctk").text(tmp.ctk);
-            $("#nh").text(tmp.nh);
-        }
-
-
-
-        if ($("#cmt").val() != "") {
-            
-        }
 	});
 });
