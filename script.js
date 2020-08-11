@@ -21,6 +21,8 @@ $(document).ready(function(){
 			}
 	    })
 	});
+    $("#info").hide();
+    $("#infoNimo").hide();
 
 	$("#submitCMT").click(function() {
         $("#info").hide();
