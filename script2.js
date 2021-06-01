@@ -48,13 +48,13 @@ $(document).ready(function(){
                     html += '<div class="row">';
                     html += '<div class="col-lg-3">';
                     html += '<label>';
-                    html += it[0];
+                    html += it[0] + ':';
                     html += '</label>';
                     html += '</div>';
                     html += '<div class="col-lg-9">';
-                    html += '<label>';
+                    html += '<h5>';
                     html += it[1];
-                    html += '</label>';
+                    html += '</h5>';
                     html += '</div>';
                     html += '</div>';
                 })
