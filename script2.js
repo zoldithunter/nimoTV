@@ -3,29 +3,34 @@ var title = [];
 $(document).ready(function(){
 	$.get( 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqBelAOsajmrwks-r2nB3aAbrir6YYRd0Lz-irZIWceYJk17SId_5K-gKReuGlj4ovjYvUZwmRrEcy/pubhtml', function( html ) {
 		$(html).find("table").find("tbody tr").each( function(index, item){
+            var $tds=$(this).find('td');
             if (index == 1) {
-                var $tds=$(this).find('td');
                 $tds.each(function(idx, it) {
                     title.push($(this).text().trim());
                 })
             }
 			if (index < 30 && index > 1) {
-				var $tds=$(this).find('td');
-				data.push({
-					stt:$tds.eq(0).text().trim(),
-                    creator:$tds.eq(1).text().trim(),
-                    idPage:$tds.eq(2).text().trim(),
-                    mg:$tds.eq(3).text().trim(),
-                    numOfFollows:$tds.eq(4).text().trim(),
-                    liveStream:$tds.eq(5).text().trim(),
-                    video:$tds.eq(6).text().trim(),
-                    viewTB:$tds.eq(7).text().trim(),
-                    ccv:$tds.eq(8).text().trim(),
-                    hl:$tds.eq(9).text().trim(),
-                    tuongtac:$tds.eq(10).text().trim(),
-                    ytb:$tds.eq(11).text().trim(),
-                    tiktok:$tds.eq(12).text().trim(),
-				})
+                $tds.each(function (idx, it) {
+                    var obj = {};
+                    obj[title[idx]] = $(this).text().trim();
+                    data.push(obj);
+                })
+
+				// data.push({
+				// 	stt:$tds.eq(0).text().trim(),
+    //                 creator:$tds.eq(1).text().trim(),
+    //                 idPage:$tds.eq(2).text().trim(),
+    //                 mg:$tds.eq(3).text().trim(),
+    //                 numOfFollows:$tds.eq(4).text().trim(),
+    //                 liveStream:$tds.eq(5).text().trim(),
+    //                 video:$tds.eq(6).text().trim(),
+    //                 viewTB:$tds.eq(7).text().trim(),
+    //                 ccv:$tds.eq(8).text().trim(),
+    //                 hl:$tds.eq(9).text().trim(),
+    //                 tuongtac:$tds.eq(10).text().trim(),
+    //                 ytb:$tds.eq(11).text().trim(),
+    //                 tiktok:$tds.eq(12).text().trim(),
+				// })
 			}
 	    })
 	});
