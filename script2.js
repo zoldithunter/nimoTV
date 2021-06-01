@@ -45,8 +45,6 @@ $(document).ready(function(){
                 $("#info").show();
                 myobj_array.forEach(function(it) {
                     let html = '<div class="row">';
-                    html += 
-                    html += '<div class="row">';
                     html += '<div class="col-lg-3">';
                     html += '<label>';
                     html += it[0];
@@ -58,10 +56,8 @@ $(document).ready(function(){
                     html += '</label>';
                     html += '</div>';
                     html += '</div>';
-                    $("#data").append(html);
+                    $("#data").html(html);
                 })
-                console.log(rs);
-                console.log(myobj_array);
             }
         }
 	});
