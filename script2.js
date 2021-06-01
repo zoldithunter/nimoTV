@@ -6,7 +6,7 @@ $(document).ready(function(){
             var $tds=$(this).find('td');
             if (index == 0) {
                 console.log($tds);
-                $("#titleCard").html('<b>THÔNG SỐ CẬP NHẬT ' + $tds[2].text().trim() + '</b>')
+                $("#titleCard").html('<b>THÔNG SỐ CẬP NHẬT ' + $tds[2].outerText + '</b>')
             }
             if (index == 1) {
                 $tds.each(function(idx, it) {
