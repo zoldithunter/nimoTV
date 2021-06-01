@@ -24,6 +24,14 @@ $(document).ready(function(){
 	});
     $("#info").hide();
 
+    $("#idPage").keypress(function(e) {
+        var key = e.which;
+        if(key == 13) {
+            $("#submit").click();
+            return false;
+        }
+    })
+
 	$("#submit").click(function() {
         $("#data").empty();
         $("#info").hide();
