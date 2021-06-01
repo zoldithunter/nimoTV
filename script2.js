@@ -4,6 +4,9 @@ $(document).ready(function(){
 	$.get( 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqBelAOsajmrwks-r2nB3aAbrir6YYRd0Lz-irZIWceYJk17SId_5K-gKReuGlj4ovjYvUZwmRrEcy/pubhtml', function( html ) {
 		$(html).find("table").find("tbody tr").each( function(index, item){
             var $tds=$(this).find('td');
+            if (index == 0) {
+                $("#titleCard").html('<b>THÔNG SỐ CẬP NHẬT ' + $tds[2].text().trim() + '</b>')
+            }
             if (index == 1) {
                 $tds.each(function(idx, it) {
                     title.push($(this).text().trim());
