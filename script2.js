@@ -44,18 +44,21 @@ $(document).ready(function(){
                 });
                 $("#info").show();
                 myobj_array.forEach(function(it) {
-                    $("#data").append('<div class="row">');
-                    $("#data").append('<div class="col-lg-3">');
-                    $("#data").append('<label>');
-                    $("#data").append(it[0]);
-                    $("#data").append('</label>');
-                    $("#data").append('</div>');
-                    $("#data").append('<div class="col-lg-9">');
-                    $("#data").append('<label>');
-                    $("#data").append(it[1]);
-                    $("#data").append('</label>');
-                    $("#data").append('</div>');
-                    $("#data").append('</div>');
+                    let html = '<div class="row">';
+                    html += 
+                    html += '<div class="row">';
+                    html += '<div class="col-lg-3">';
+                    html += '<label>';
+                    html += it[0];
+                    html += '</label>';
+                    html += '</div>';
+                    html += '<div class="col-lg-9">';
+                    html += '<label>';
+                    html += it[1];
+                    html += '</label>';
+                    html += '</div>';
+                    html += '</div>';
+                    $("#data").append(html);
                 })
                 console.log(rs);
                 console.log(myobj_array);
