@@ -5,6 +5,7 @@ $(document).ready(function(){
 		$(html).find("table").find("tbody tr").each( function(index, item){
             var $tds=$(this).find('td');
             if (index == 0) {
+                console.log($tds);
                 $("#titleCard").html('<b>THÔNG SỐ CẬP NHẬT ' + $tds[2].text().trim() + '</b>')
             }
             if (index == 1) {
