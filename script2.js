@@ -10,11 +10,11 @@ $(document).ready(function(){
                 })
             }
 			if (index < 30 && index > 1) {
+                var obj = {};
                 $tds.each(function (idx, it) {
-                    var obj = {};
                     obj[title[idx]] = $(this).text().trim();
-                    data.push(obj);
                 })
+                data.push(obj);
 
 				// data.push({
 				// 	stt:$tds.eq(0).text().trim(),
