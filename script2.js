@@ -34,6 +34,8 @@ $(document).ready(function(){
 			}
 	    })
 	});
+    console.log(title);
+    console.log(data);
     $("#info").hide();
 
 	$("#submitCMT").click(function() {
