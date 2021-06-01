@@ -42,6 +42,21 @@ $(document).ready(function(){
                 var myobj_array= $.map(rs[0], function(value, index) {
                     return [[index,value]];
                 });
+                $("#info").show();
+                myobj_array.each(function(idx, it) {
+                    $("#data").append('<div class="row">');
+                    $("#data").append('<div class="col-lg-3">');
+                    $("#data").append('<label>');
+                    $("#data").append(it[0]);
+                    $("#data").append('</label>');
+                    $("#data").append('</div>');
+                    $("#data").append('<div class="col-lg-9">');
+                    $("#data").append('<label>');
+                    $("#data").append(it[1]);
+                    $("#data").append('</label>');
+                    $("#data").append('</div>');
+                    $("#data").append('</div>');
+                })
                 console.log(rs);
                 console.log(myobj_array);
             }
