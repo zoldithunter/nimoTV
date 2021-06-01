@@ -43,7 +43,7 @@ $(document).ready(function(){
                     return [[index,value]];
                 });
                 $("#info").show();
-                myobj_array.each(function(idx, it) {
+                myobj_array.forEach(function(it) {
                     $("#data").append('<div class="row">');
                     $("#data").append('<div class="col-lg-3">');
                     $("#data").append('<label>');
