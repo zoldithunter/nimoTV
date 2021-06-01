@@ -39,7 +39,11 @@ $(document).ready(function(){
             if (rs.length == 0) {
                 alert("Thông tin ID Fanpage: " + $("#idPage").val() + " sai");
             } else {
+                var myobj_array= $.map(rs[0], function(value, index) {
+                    return [[index,value]];
+                });
                 console.log(rs);
+                console.log(myobj_array);
             }
         }
 	});
