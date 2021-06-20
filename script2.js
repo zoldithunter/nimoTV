@@ -38,7 +38,7 @@ $(document).ready(function(){
             alert("Không có thông tin");
         } else {
             var filter = {
-                    'ID Fanpage' : $("#idPage").val()
+                    'ID Fanpage_' : $("#idPage").val()
             }
             var rs = data.filter(function(item){
                             for (var key in filter) {
