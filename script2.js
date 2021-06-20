@@ -59,7 +59,7 @@ $(document).ready(function(){
                 let html = "";
                 myobj_array.forEach(function(it) {
 
-                    if (it[0].contains('**')) {
+                    if (it[0].includes('**')) {
                         superVip += '<div>';
                         superVip += '<div class="col-lg-3">';
                         superVip += '<label>';
@@ -72,7 +72,7 @@ $(document).ready(function(){
                         superVip += '</h5>';
                         superVip += '</div>';
                         superVip += '</div>';
-                    } else if (it[0].contains('*')) {
+                    } else if (it[0].includes('*')) {
                         vip += '<div>';
                         vip += '<div class="col-lg-3">';
                         vip += '<label>';
@@ -85,7 +85,7 @@ $(document).ready(function(){
                         vip += '</h5>';
                         vip += '</div>';
                         vip += '</div>';
-                    } else if (it[0].contains('_')) {
+                    } else if (it[0].includes('_')) {
                         // notthing 
                     } else {
                         html += '<div class="row">';
