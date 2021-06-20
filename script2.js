@@ -54,21 +54,56 @@ $(document).ready(function(){
                     return [[index,value]];
                 });
                 $("#info").show();
+                let superVip = "";
+                let vip = "";
                 let html = "";
                 myobj_array.forEach(function(it) {
-                    html += '<div class="row">';
-                    html += '<div class="col-lg-3">';
-                    html += '<label>';
-                    html += it[0] + ':';
-                    html += '</label>';
-                    html += '</div>';
-                    html += '<div class="col-lg-9">';
-                    html += '<h5>';
-                    html += it[1];
-                    html += '</h5>';
-                    html += '</div>';
-                    html += '</div>';
+
+                    if (it[0].contains('**')) {
+                        superVip += '<div>';
+                        superVip += '<div class="col-lg-3">';
+                        superVip += '<label>';
+                        superVip += it[0].substring(0, it[0].length - 2) + ':';
+                        superVip += '</label>';
+                        superVip += '</div>';
+                        superVip += '<div class="col-lg-3">';
+                        superVip += '<h5>';
+                        superVip += it[1];
+                        superVip += '</h5>';
+                        superVip += '</div>';
+                        superVip += '</div>';
+                    } else if (it[0].contains('*')) {
+                        vip += '<div>';
+                        vip += '<div class="col-lg-3">';
+                        vip += '<label>';
+                        vip += it[0].substring(0, it[0].length - 1) + ':';
+                        vip += '</label>';
+                        vip += '</div>';
+                        vip += '<div class="col-lg-3">';
+                        vip += '<h5>';
+                        vip += it[1];
+                        vip += '</h5>';
+                        vip += '</div>';
+                        vip += '</div>';
+                    } else if (it[0].contains('_')) {
+                        // notthing 
+                    } else {
+                        html += '<div class="row">';
+                        html += '<div class="col-lg-3">';
+                        html += '<label>';
+                        html += it[0] + ':';
+                        html += '</label>';
+                        html += '</div>';
+                        html += '<div class="col-lg-9">';
+                        html += '<h5>';
+                        html += it[1];
+                        html += '</h5>';
+                        html += '</div>';
+                        html += '</div>';
+                    }
                 })
+                $("#superVip").html(superVip);
+                $("#vip").html(vip);
                 $("#data").html(html);
             }
         }
