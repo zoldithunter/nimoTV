@@ -19,7 +19,8 @@ $(document).ready(function(){
                 })
                 data.push(obj);
                 const id = 'ID Fanpage_';
-                var options = '<option value=' + obj[id] + '>' + obj[id] + '</option>';
+                const view = 'Creator**';
+                var options = '<option value=' + obj[id] + '>' + obj[view] + '</option>';
                 $("#idPage").append(options);
 			}
 	    })
