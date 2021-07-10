@@ -18,16 +18,12 @@ $(document).ready(function(){
                     obj[title[idx]] = $(this).text().trim();
                 })
                 data.push(obj);
+                const id = 'ID Fanpage_';
+                var options = '<option value=' + obj[i][id] + '>' + obj[i][id] + '</option>';
+                $("#idPage").append(options);
 			}
 	    })
 	});
-
-	var options = "";
-	const id = 'ID Fanpage_';
-    for (var i = 0; i < data.length; i++) {
-        options += '<option value=' + data[i][id] + '>' + data[i][id] + '</option>';
-    }
-    $("#idPage").append(options);
 
     $("#info").hide();
 
