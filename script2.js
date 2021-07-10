@@ -17,11 +17,13 @@ $(document).ready(function(){
                 $tds.each(function (idx, it) {
                     obj[title[idx]] = $(this).text().trim();
                 })
-                data.push(obj);
                 const id = 'ID Fanpage_';
                 const view = 'Creator**';
-                var options = '<option value=' + obj[id] + '>' + obj[view] + '</option>';
-                $("#idPage").append(options);
+                if ($.trim(obj[id]) !== '') {
+                    data.push(obj);
+                    const options = '<option value=' + obj[id] + '>' + obj[view] + '</option>';
+                    $("#idPage").append(options);
+                }
 			}
 	    })
 	});
