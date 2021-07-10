@@ -19,7 +19,7 @@ $(document).ready(function(){
                 })
                 data.push(obj);
                 const id = 'ID Fanpage_';
-                var options = '<option value=' + obj[i][id] + '>' + obj[i][id] + '</option>';
+                var options = '<option value=' + obj[id] + '>' + obj[id] + '</option>';
                 $("#idPage").append(options);
 			}
 	    })
